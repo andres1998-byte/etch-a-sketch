@@ -1,4 +1,4 @@
-const sizeOfGrid=4;
+const sizeOfGrid=16;
 const container =document.querySelector('.container');
 
 const createGrid = (amtOfGrids) => {
@@ -9,6 +9,9 @@ const createGrid = (amtOfGrids) => {
         for (let j=0; j<amtOfGrids; j++) {
             const gridBox=document.createElement('div');
             gridBox.classList.add('grid-box');
+            gridBox.addEventListener('mouseenter', ()=> {
+                gridBox.style.cssText="background-color: black";
+            })
             row.appendChild(gridBox);
         }
         container.appendChild(row)
